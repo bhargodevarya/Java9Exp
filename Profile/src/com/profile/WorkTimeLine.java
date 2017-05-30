@@ -11,8 +11,8 @@ public class WorkTimeLine {
 
     private List<WorkExperience> workExperienceList;
 
-    public Organization getCommonTech() {
-        return null;
+    public WorkTimeLine(List<WorkExperience> workExperienceList) {
+        this.workExperienceList = workExperienceList;
     }
 
     public List<WorkExperience> getWorkExperienceList() {
@@ -24,7 +24,11 @@ public class WorkTimeLine {
     }
 
     public float getTotalExp() {
-        return 0f;
+        long diff = getWorkExperienceList().get(getWorkExperienceList().size()-1).getStartDate().
+                getTime() - getWorkExperienceList().get(0).getEndDate().
+                getTime();
+        System.out.println(diff);
+        return diff / (24*60*60*1000) % 365;
     }
 
     public String hasBeenSetup() {

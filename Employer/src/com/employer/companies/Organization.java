@@ -25,4 +25,12 @@ public class Organization {
     public void setLocation(String location) {
         this.location = location;
     }
+
+    @Override
+    public String toString() {
+        return "Organization{" +
+                "name='" + name + '\'' +
+                ", location='" + location + '\'' +
+                '}';
+    }
 }

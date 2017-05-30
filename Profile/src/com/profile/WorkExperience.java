@@ -64,4 +64,15 @@ public class WorkExperience {
     public void setTechnologies(Set<String> technologies) {
         this.technologies = technologies;
     }
+
+    @Override
+    public String toString() {
+        return "WorkExperience{" +
+                "isCurrent=" + isCurrent +
+                ", company=" + company +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", technologies=" + technologies +
+                '}';
+    }
 }

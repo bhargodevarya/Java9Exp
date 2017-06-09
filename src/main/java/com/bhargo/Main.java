@@ -1,6 +1,7 @@
 package com.bhargo;
 
 import com.bhargo.reader.IReader;
+import com.bhargo.web.App;
 import com.employer.companies.Organization;
 import com.profile.WorkExperience;
 import com.profile.WorkTimeLine;
@@ -17,7 +18,8 @@ public class Main {
     public static void main(String[] args) {
         ServiceLoader<IReader> serviceLoader = ServiceLoader.load(IReader.class);
         try {
-            System.out.println(serviceLoader.iterator().next().read("genome-tags.csv", Main.class).get(9));
+            System.out.println(serviceLoader.iterator().next().read("genome-tags.csv", Main.class).get(4));
+            App.main(new String[]{""});
         } catch (IOException e) {
             e.printStackTrace();
         }
